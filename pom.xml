@@ -5,7 +5,7 @@
 	<groupId>org.websocket</groupId>
 	<artifactId>websocket-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>websocket-example</name>
 
@@ -16,17 +16,37 @@
 	</properties>
 
 	<dependencies>
-		
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty.websocket</groupId>
+			<artifactId>javax-websocket-server-impl</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty.websocket</groupId>
 			<artifactId>javax-websocket-client-impl</artifactId>
 			<version>${jetty.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty.websocket</groupId>
-			<artifactId>websocket-client</artifactId>
-			<version>${jetty.version}</version>
-		</dependency>
-		
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+	
 </project>
