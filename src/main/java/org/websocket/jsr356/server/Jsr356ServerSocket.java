@@ -1,4 +1,4 @@
-package org.websocket.server;
+package org.websocket.jsr356.server;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-//@ServerEndpoint("/jsr")
+@ServerEndpoint("/jsr")
 public class Jsr356ServerSocket {
 
 	@OnOpen

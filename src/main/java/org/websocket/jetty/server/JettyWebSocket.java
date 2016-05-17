@@ -1,4 +1,4 @@
-package org.websocket.server;
+package org.websocket.jetty.server;
 
 import java.io.IOException;
 

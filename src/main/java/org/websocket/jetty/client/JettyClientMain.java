@@ -1,4 +1,4 @@
-package org.websocket.client;
+package org.websocket.jetty.client;
 
 import java.net.URI;
 

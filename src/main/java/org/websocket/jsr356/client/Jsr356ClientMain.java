@@ -1,4 +1,4 @@
-package org.websocket.client;
+package org.websocket.jsr356.client;
 
 import java.net.URI;
 
