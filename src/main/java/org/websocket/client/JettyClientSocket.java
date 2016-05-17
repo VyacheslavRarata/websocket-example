@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 
 import org.eclipse.jetty.websocket.api.Session;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
@@ -23,7 +24,12 @@ public class JettyClientSocket {
 	public void onConnect(Session session) {
 		this.session = session;
 		latch.countDown();
-		System.out.println("Connected");
+		System.out.println(session.getRemoteAddress().getHostName() + " connected!");
+	}
+
+	@OnWebSocketClose
+	public void onClose(Session session, int status, String reason) {
+		System.out.println(session.getRemoteAddress().getHostString() + " closed!");
 	}
 
 	public void sendMessage(String message) {
